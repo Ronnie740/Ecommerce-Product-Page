@@ -1,13 +1,12 @@
 // import logo from "./logo.svg";
 import "./App.css";
-
 function App() {
 	return (
-		<div className="App">
-			<div className="flex mx-20">
+		<div className="App font-['Kumbh Sans', sans-serif]">
+			<div className="flex mx-20 space-x-5">
 				{/* logo */}
 				<div>
-					<h1 className="text-4xl font-bold m-2">Sneakers</h1>
+					<h1 className="text-4xl font-[700] m-2 font-['Kumbh Sans', sans-serif]">sneakers</h1>
 				</div>
 				{/*Desktop Menu */}
 				<div>
