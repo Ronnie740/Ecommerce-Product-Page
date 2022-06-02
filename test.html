@@ -27,11 +27,11 @@
 		<nav class="flex mx-32 overflow-x-hidden border-b-[1px] border-slate-300">
 			<h1 class="w-auto py-5 pr-5 text-2xl">sneakers</h1>
 			<ul class="w-auto list-none justify-center mt-1.5 text-gray-500">
-				<li class="float-left cursor-pointer p-5"><a href="#">Collections</a></li>
-				<li class="float-left cursor-pointer p-5"><a href="#">Men</a></li>
-				<li class="float-left cursor-pointer p-5"><a href="#">Women</a></li>
-				<li class="float-left cursor-pointer p-5"><a href="#">About</a></li>
-				<li class="float-left cursor-pointer p-5"><a href="#">Contact</a></li>
+				<li class="float-left cursor-pointer p-5" id="collections"><a href="">Collections</a></li>
+				<li class="float-left cursor-pointer p-5" id="men"><a href="">Men</a></li>
+				<li class="float-left cursor-pointer p-5" id="women"><a href="">Women</a></li>
+				<li class="float-left cursor-pointer p-5" id="about"><a href="">About</a></li>
+				<li class="float-left cursor-pointer p-5" id="contact"><a href="">Contact</a></li>
 			</ul>
 			<div class="mt-6 float-right w-auto ml-auto cursor-pointer">
 				<svg width="22" height="22" xmlns="http://www.w3.org/2000/svg">
@@ -135,6 +135,48 @@
 				if (count > 0) {
 					count--;
 					counter.innerHTML = count;
+				}
+			});
+
+			var collections = document.getElementById("collections");
+			var men = document.getElementById("men");
+			var women = document.getElementById("women");
+			var about = document.getElementById("about");
+			var contact = document.getElementById("contact");
+
+			collections.addEventListener("click", function () {
+				if (collections.classList.contains("border-b-[3px]", "border-orange-500")) {
+					collections.classList.remove("border-b-[3px]", "border-orange-500");
+				} else {
+					collections.classList.add("border-b-[3px]", "border-orange-500");
+				}
+			});
+			men.addEventListener("click", function () {
+				if (men.classList.contains("border-b-[3px]", "border-orange-500")) {
+					men.classList.remove("border-b-[3px]", "border-orange-500");
+				} else {
+					men.classList.add("border-b-[3px]", "border-orange-500");
+				}
+			});
+			women.addEventListener("click", function () {
+				if (women.classList.contains("border-b-[3px]", "border-orange-500")) {
+					women.classList.remove("border-b-[3px]", "border-orange-500");
+				} else {
+					women.classList.add("border-b-[3px]", "border-orange-500");
+				}
+			});
+			about.addEventListener("click", function () {
+				if (about.classList.contains("border-b-[3px]", "border-orange-500")) {
+					about.classList.remove("border-b-[3px]", "border-orange-500");
+				} else {
+					about.classList.add("border-b-[3px]", "border-orange-500");
+				}
+			});
+			contact.addEventListener("click", function () {
+				if (contact.classList.contains("border-b-[3px]", "border-orange-500")) {
+					contact.classList.remove("border-b-[3px]", "border-orange-500");
+				} else {
+					contact.classList.add("border-b-[3px]", "border-orange-500");
 				}
 			});
 		</script>
