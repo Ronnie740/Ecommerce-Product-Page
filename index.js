@@ -23,6 +23,12 @@ addToCart.addEventListener("click", function () {
 		quantity.innerHTML = count;
 		total.innerHTML = "$" + count * 125.0 + ".00";
 	}
+	cartImage.classList.remove("hidden");
+	trash.classList.remove("hidden");
+	emptyCart.classList.add("hidden");
+	checkout.classList.remove("hidden");
+	count == null;
+	cart.classList.remove("hidden");
 });
 
 var collections = document.getElementById("collections");
