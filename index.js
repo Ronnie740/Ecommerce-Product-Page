@@ -107,8 +107,8 @@ const images = {
 	3: "./images/image-product-3.jpg",
 	4: "./images/image-product-4.jpg",
 };
-console.log(images[1]);
-console.log(overlayImg.getAttribute("src"));
+// console.log(images[1]);
+// console.log(overlayImg.getAttribute("src"));
 
 nextImg.addEventListener("click", function () {
 	if (overlayImg.getAttribute("src") == images[1]) {
