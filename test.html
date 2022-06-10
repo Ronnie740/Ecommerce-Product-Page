@@ -10,7 +10,7 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet" />
 	</head>
-	<body>
+	<body class="overflow-hidden">
 		<style>
 			body,
 			h1 {
@@ -34,8 +34,8 @@
 				<li class="float-left cursor-pointer p-5" id="contact"><a href="">Contact</a></li>
 			</ul>
 			<!-- Cart -->
-			<section class="mt-6 float-right w-auto ml-auto cursor-pointer relative">
-				<svg width="22" height="22" xmlns="http://www.w3.org/2000/svg">
+			<section class="mt-6 float-right w-auto ml-auto cursor-pointer relative z-0">
+				<svg width="22" height="22" xmlns="http://www.w3.org/2000/svg" id="cartIcon">
 					<path
 						d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"
 						fill="#69707D"
@@ -45,8 +45,8 @@
 				<!-- Cart items number -->
 				<div class="absolute px-2 rounded-md bg-orange-500 -top-[6px] left-2 text-[9px] text-white" id="cart"></div>
 			</section>
-			<!-- open cart -->
-			<section id="openCart" class="w-auto h-auto -ml-10 mt-10 relative z-20 flex flex-col bg-white shadow-xl p-2">
+			<!-- open cart
+			<section id="openCart" class="w-auto h-auto -ml-10 mt-20 relative z-20 flex flex-col bg-white shadow-xl p-2">
 				<p class="border-slate-200 border-b-2 p-2 float-left mb-2">Cart</p>
 				<div class="flex flex-row space-x-3">
 					<img src="./images/image-product-1.jpg" alt="image-product-1" class="rounded-md w-16 h-16" />
@@ -58,7 +58,7 @@
 						</div>
 					</div>
 					<!-- trash icon -->
-					<div class="w-auto mt-5">
+			<!-- <div class="w-auto mt-5">
 						<svg width="14" height="16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 							<defs>
 								<path
@@ -71,14 +71,92 @@
 					</div>
 				</div>
 				<div class="bg-orange-500 rounded-md text-xl text-white w-full flex justify-center p-2 mt-2 hover:cursor-pointer hover:bg-orange-600">Checkout</div>
-			</section>
+			</section> -->
 
 			<!-- Profile -->
 			<div class="cursor-pointer">
 				<img src="./images/image-avatar.png" alt="image-avatar" class="w-10 h-10 mt-3 mx-10 hover:border-2 hover:border-orange-500 rounded-full" />
 			</div>
 		</nav>
+		<!-- open cart -->
+		<section id="openCart" class="w-auto h-auto ml-[70%] absolute z-20 flex flex-col bg-white shadow-2xl p-2 w-72 rounded-md -mt-3 hidden">
+			<p class="border-slate-200 border-b-2 p-2 float-left mb-2">Cart</p>
+			<div class="flex flex-row space-x-3" id="cartImage">
+				<img src="./images/image-product-1.jpg" alt="image-product-1" class="rounded-md w-16 h-16" />
+				<div class="w-auto">
+					<p class="text-slate-400">Fall Limited Edition Sneakers</p>
+					<div class="text-slate-400 flex space-x-3" id="cartItemPrice">
+						<p>$125.00 x</p>
+						<p id="quantity"></p>
+						<p class="text-black" id="total">$</p>
+					</div>
+				</div>
+				<!-- trash icon -->
+				<div class="w-auto mt-5 cursor-pointer" id="trash">
+					<svg width="14" height="16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+						<defs>
+							<path
+								d="M0 2.625V1.75C0 1.334.334 1 .75 1h3.5l.294-.584A.741.741 0 0 1 5.213 0h3.571a.75.75 0 0 1 .672.416L9.75 1h3.5c.416 0 .75.334.75.75v.875a.376.376 0 0 1-.375.375H.375A.376.376 0 0 1 0 2.625Zm13 1.75V14.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 1 14.5V4.375C1 4.169 1.169 4 1.375 4h11.25c.206 0 .375.169.375.375ZM4.5 6.5c0-.275-.225-.5-.5-.5s-.5.225-.5.5v7c0 .275.225.5.5.5s.5-.225.5-.5v-7Zm3 0c0-.275-.225-.5-.5-.5s-.5.225-.5.5v7c0 .275.225.5.5.5s.5-.225.5-.5v-7Zm3 0c0-.275-.225-.5-.5-.5s-.5.225-.5.5v7c0 .275.225.5.5.5s.5-.225.5-.5v-7Z"
+								id="a"
+							/>
+						</defs>
+						<use fill="#C3CAD9" fill-rule="nonzero" xlink:href="#a" />
+					</svg>
+				</div>
+			</div>
+			<!-- Empty Cart -->
+			<div class="text-slate-500 hidden mx-auto" id="emptyCart">
+				<p>Your Cart is Empty</p>
+			</div>
+			<button class="bg-orange-500 rounded-md text-l font-bold text-white w-full flex justify-center p-2 mt-2 hover:cursor-pointer hover:bg-orange-600" id="checkout">Checkout</button>
+		</section>
+		<!-- open gallery -->
+		<section class="hidden w-full h-full bg-black absolute -mt-[73px] mb-5 bg-opacity-70">
+			<div class="bg-orange-500 mx-auto my-52 relative z-40 w-96 h-96 rounded-md">
+				<!-- Next -->
+				<div class="absolute -top-5 right-0 cursor-pointer" id="nextImg">
+					<svg width="14" height="15" xmlns="http://www.w3.org/2000/svg">
+						<path
+							d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z"
+							fill="#FF7E1B"
+							fill-rule="evenodd"
+						/>
+					</svg>
+				</div>
+				<img src="./images/image-product-1.jpg" alt="image-product-1" class="rounded-md" id="overlayImg" />
+				<!-- Previous -->
+				<div class="absolute bg-white rounded-full p-4 top-1/2 -left-5 cursor-pointer" id="prevImg">
+					<svg width="12" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M11 1 3 9l8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd" id="path" /></svg>
+				</div>
+				<div class="absolute bg-white rounded-full p-4 top-1/2 -right-5 cursor-pointer">
+					<svg width="13" height="18" xmlns="http://www.w3.org/2000/svg"><path d="m2 1 8 8-8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd" /></svg>
+				</div>
+				<div class="flex space-x-5">
+					<img
+						src="./images/image-product-1-thumbnail.jpg"
+						alt="image-product-1-thumbnail"
+						class="rounded-lg mt-2 w-20 h-20 hover:border-orange-500 hover:border-2 hover:bg-slate-200 hover:opacity-50 cursor-pointer"
+					/>
+					<img
+						src="./images/image-product-2-thumbnail.jpg"
+						alt=""
+						class="rounded-md mt-2 w-20 h-20 hover:border-orange-500 hover:border-2 hover:bg-slate-200 hover:opacity-50 cursor-pointer"
+					/>
+					<img
+						src="./images/image-product-3-thumbnail.jpg"
+						alt=""
+						class="rounded-md mt-2 w-20 h-20 hover:border-orange-500 hover:border-2 hover:bg-slate-200 hover:opacity-50 cursor-pointer"
+					/>
+					<img
+						src="./images/image-product-4-thumbnail.jpg"
+						alt=""
+						class="rounded-md mt-2 w-20 h-20 hover:border-orange-500 hover:border-2 hover:bg-slate-200 hover:opacity-50 cursor-pointer"
+					/>
+				</div>
+			</div>
+		</section>
 
+		<!-- Main content -->
 		<main class="grid grid-cols-2 gap-10 mt-20 mx-32">
 			<div class="w-96 h-96">
 				<img src="./images/image-product-1.jpg" alt="image-product-1" class="rounded-md" />
@@ -107,7 +185,7 @@
 					<p>These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.</p>
 				</div>
 				<div class="flex my-5">
-					<p class="text-2xl">$125.00</p>
+					<p class="text-2xl" id="price">$125.00</p>
 					<p class="px-2 mx-3 my-auto bg-orange-100 font-medium text-orange-500 rounded-md">50%</p>
 				</div>
 				<div class="text-slate-300 line-through">
@@ -174,7 +252,12 @@
 			var addToCart = document.getElementById("addToCart");
 
 			addToCart.addEventListener("click", function () {
-				cart.innerHTML = count;
+				if (count > 0) {
+					cart.innerHTML = count;
+					// cartItemPrice.innerHTML = price.innerHTML + " x " + count + "  " + price.innerHTML * count;
+					quantity.innerHTML = count;
+					total.innerHTML = "$" + count * 125.0 + ".00";
+				}
 			});
 
 			var collections = document.getElementById("collections");
@@ -217,6 +300,63 @@
 				} else {
 					contact.classList.add("border-b-[3px]", "border-orange-500");
 				}
+			});
+
+			const cartImage = document.getElementById("cartImage");
+			const trash = document.getElementById("trash");
+			const emptyCart = document.getElementById("emptyCart");
+			const checkout = document.getElementById("checkout");
+			trash.addEventListener("click", function () {
+				cartImage.classList.add("hidden");
+				trash.classList.add("hidden");
+				emptyCart.classList.remove("hidden");
+				checkout.classList.add("hidden");
+				count == null;
+				cart.classList.add("hidden");
+			});
+			const cartIcon = document.getElementById("cartIcon");
+			const openCart = document.getElementById("openCart");
+			cartIcon.addEventListener("click", function () {
+				if (openCart.classList.contains("hidden") && count > 0) {
+					openCart.classList.remove("hidden");
+				} else {
+					openCart.classList.add("hidden");
+				}
+			});
+			const quantity = document.getElementById("quantity");
+			const total = document.getElementById("total");
+			// const price = document.getElementById("price");
+			// const cartItemPrice = document.getElementById("cartItemPrice");
+			const nextImg = document.getElementById("nextImg");
+			const prevImg = document.getElementById("prevImg");
+			const overlayImg = document.getElementById("overlayImg");
+			const images = { 1: "./images/image-product-1.jpg", 2: "./images/image-product-2.jpg", 3: "./images/image-product-3.jpg", 4: "./images/image-product-4.jpg" };
+
+			nextImg.addEventListener("click", function () {
+				if (overlayImg.src == images[1]) {
+					overlayImg.src = images[2];
+				} else if (overlayImg.src == images[2]) {
+					overlayImg.src = images[3];
+				} else if (overlayImg.src == images[3]) {
+					overlayImg.src = images[4];
+				} else if (overlayImg.src == images[4]) {
+					overlayImg.src = images[1];
+				}
+			});
+			prevImg.addEventListener("click", function () {
+				if (overlayImg.src == images[1]) {
+					overlayImg.src = images[4];
+				} else if (overlayImg.src == images[2]) {
+					overlayImg.src = images[1];
+				} else if (overlayImg.src == images[3]) {
+					overlayImg.src = images[2];
+				} else if (overlayImg.src == images[4]) {
+					overlayImg.src = images[3];
+				}
+			});
+			const path = document.getElementById("path");
+			path.addEventListener("mouseover", function () {
+				path.stroke = "#FF7E1B";
 			});
 		</script>
 	</body>
